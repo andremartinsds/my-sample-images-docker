@@ -7,12 +7,27 @@ services:
     restart: always
     tty: true
     volumes: 
-      - ./mysql:/var/lib/mysql    
+      - ./mysql:/var/lib/mysql
+    ports: 
+      - "3306:3306"
     environment: 
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=docker
     networks: 
-      - nodenetwork  
+      - nodenetwork
+  node:
+    depends_on: 
+      - db
+    build: 
+      context: ./node
+      dockerfile: ./Dockerfile
+    container_name: app
+    volumes: 
+      - ./node:/usr/src/app
+    ports: 
+      - "3000:3000"
+    networks: 
+      - nodenetwork
 
 networks: 
   nodenetwork:
