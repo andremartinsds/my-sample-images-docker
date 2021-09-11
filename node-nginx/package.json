@@ -2,13 +2,14 @@
   "name": "app",
   "version": "1.0.0",
   "description": "",
+  "author": "André Martins",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "nodemon": "^2.0.12",
     "express": "^4.17.1",
     "mysql": "^2.18.1"
   }

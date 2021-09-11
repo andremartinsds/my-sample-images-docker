@@ -18,11 +18,11 @@ app.get("/create", (req, res) => {
   const sql = `INSERT INTO people(name) values('André')`
   myConection.query(sql);
   myConection.end();
-  res.send("<h1>Inserted People</h1>");
+  res.send("<h1>Full Cycle Rocks!</h1>");
 });
 
 app.get("/", (req, res) => {
-  res.send("<h1>Node RUN</h1>");
+  res.send("<h1>Full Cycle Rocks!</h1>");
 });
 
 app.listen(port, () => {
